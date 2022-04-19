@@ -70,6 +70,14 @@ public class MyMain extends Application
 
 		Menu helpMenu = new Menu("Help");
 		MenuItem aboutApp= new Menu("About");
+
+		aboutApp.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				aboutApp();
+
+			}
+		});
 		helpMenu.getItems().addAll(aboutApp);
 
 		MenuBar menuBar= new MenuBar();
@@ -77,6 +85,10 @@ public class MyMain extends Application
 
 		return menuBar;
 	}
+
+	private void aboutApp() {
+	}
+
 	@Override
 	public void stop() throws Exception {
 		System.out.println("Stop");
