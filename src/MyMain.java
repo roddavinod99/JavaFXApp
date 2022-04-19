@@ -4,6 +4,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -45,8 +46,9 @@ public class MyMain extends Application
 
 		Menu fileMenu = new Menu("File");
 		MenuItem newMenuItem= new MenuItem("New");
+		SeparatorMenuItem separatorMenuItem= new SeparatorMenuItem();
 		MenuItem quitMenuItem= new MenuItem("Quit");
-		fileMenu.getItems().addAll(newMenuItem, quitMenuItem);
+		fileMenu.getItems().addAll(newMenuItem, separatorMenuItem, quitMenuItem);
 
 		Menu helpMenu = new Menu("Help");
 		MenuItem aboutApp= new Menu("About");
