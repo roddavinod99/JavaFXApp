@@ -62,7 +62,8 @@ public class MyMain extends Application
 		quitMenuItem.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
-				Platform.exit();                    // shut down the current application.
+				Platform.exit();            // shut down the current application.
+			System.exit(0);             // to shut down the virtual machine
 			}
 		});
 		fileMenu.getItems().addAll(newMenuItem, separatorMenuItem, quitMenuItem);
