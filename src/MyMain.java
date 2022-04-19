@@ -77,16 +77,17 @@ public class MyMain extends Application
 			alertDialog.setTitle("My First Desktop App");
 			alertDialog.setHeaderText("Learning JavaFX");
 			alertDialog.setContentText("I am Just a beginner but soon I will be a pro and start developing awesome games.");
+
 			ButtonType yesBtn= new ButtonType("yes");
 			ButtonType noBtn = new ButtonType("No");
 
 			alertDialog.getButtonTypes().setAll(yesBtn,noBtn);
+
 			Optional<ButtonType> clickBtn = alertDialog.showAndWait();
 
 			if (clickBtn.isPresent() && clickBtn.get() == yesBtn){
 				System.out.println("Yes button was clicked");
-			}
-			else {
+			} else {
 				System.out.println("No button was clicked");
 			}
 	}
