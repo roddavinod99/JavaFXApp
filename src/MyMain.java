@@ -86,11 +86,10 @@ public class MyMain extends Application
 			if (clickBtn.isPresent() && clickBtn.get() == yesBtn){
 				System.out.println("Yes button was clicked");
 			}
-
-			if (clickBtn.isPresent() && clickBtn.get() == noBtn){
+			else {
 				System.out.println("No button was clicked");
 			}
-		}
+	}
 
 	@Override
 	public void stop() throws Exception {
