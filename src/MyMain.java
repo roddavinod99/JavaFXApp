@@ -1,14 +1,11 @@
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.SeparatorMenuItem;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -37,7 +34,7 @@ public class MyMain extends Application
 
 		MenuBar menuBar=  createMenu();
 		rootNode.getChildren().addAll(menuBar);
-		// this atatement will add the menu bar in the VBox
+		// this statement will add the menu bar in the VBox
 		Scene scene = new Scene(rootNode, 300, 275);
 
 		primaryStage.setScene(scene);
@@ -50,34 +47,24 @@ public class MyMain extends Application
 		Menu fileMenu = new Menu("File");
 		MenuItem newMenuItem= new MenuItem("New");
 
-		newMenuItem.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent event) {
-				System.out.println("new Menu Item Clicked");        // print the statement when the new MenuItem is clicked.
-			}
+		newMenuItem.setOnAction(event -> {
+			System.out.println("new Menu Item Clicked");        // print the statement when the new MenuItem is clicked.
 		});
 
 		SeparatorMenuItem separatorMenuItem= new SeparatorMenuItem();
 		MenuItem quitMenuItem= new MenuItem("Quit");
-		quitMenuItem.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent event) {
-				Platform.exit();            // shut down the current application.
-			System.exit(0);             // to shut down the virtual machine
-			}
+		quitMenuItem.setOnAction(event -> {
+			Platform.exit();                  // shut down the current application.
+		    System.exit(0);             // to shut down the virtual machine
 		});
+
 		fileMenu.getItems().addAll(newMenuItem, separatorMenuItem, quitMenuItem);
 
 		Menu helpMenu = new Menu("Help");
 		MenuItem aboutApp= new Menu("About");
 
-		aboutApp.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-			public void handle(ActionEvent event) {
-				aboutApp();
+		aboutApp.setOnAction(event -> aboutApp());
 
-			}
-		});
 		helpMenu.getItems().addAll(aboutApp);
 
 		MenuBar menuBar= new MenuBar();
