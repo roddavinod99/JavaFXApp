@@ -1,4 +1,6 @@
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
@@ -46,6 +48,13 @@ public class MyMain extends Application
 
 		Menu fileMenu = new Menu("File");
 		MenuItem newMenuItem= new MenuItem("New");
+
+		newMenuItem.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				System.out.println("new Menu Item Clicked");
+			}
+		});
 		SeparatorMenuItem separatorMenuItem= new SeparatorMenuItem();
 		MenuItem quitMenuItem= new MenuItem("Quit");
 		fileMenu.getItems().addAll(newMenuItem, separatorMenuItem, quitMenuItem);
