@@ -2,10 +2,7 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.SeparatorMenuItem;
+import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -74,7 +71,12 @@ public class MyMain extends Application
 	}
 
 	private void aboutApp() {
-	}
+			Alert alertDialog = new Alert(Alert.AlertType.INFORMATION);
+			alertDialog.setTitle("My First Desktop App");
+			alertDialog.setHeaderText("Learning JavaFX");
+			alertDialog.setContentText("I am Just a beginner but soon I will be a pro and start developing awesome games.");
+			alertDialog.show();
+		}
 
 	@Override
 	public void stop() throws Exception {
