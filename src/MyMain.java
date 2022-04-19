@@ -3,6 +3,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -43,11 +44,17 @@ public class MyMain extends Application
 	private MenuBar createMenu() {
 
 		Menu fileMenu = new Menu("File");
+		MenuItem newMenuItem= new MenuItem("New");
+		MenuItem quitMenuItem= new MenuItem("Quit");
+		fileMenu.getItems().addAll(newMenuItem, quitMenuItem);
 
 		Menu helpMenu = new Menu("Help");
+		MenuItem aboutApp= new Menu("About");
+		helpMenu.getItems().addAll(aboutApp);
 
 		MenuBar menuBar= new MenuBar();
 		menuBar.getMenus().addAll(fileMenu, helpMenu);
+
 		return menuBar;
 	}
 	@Override
